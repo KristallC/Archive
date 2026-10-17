@@ -1,16 +1,16 @@
 {
-  "short_name": "K-Archive",
-  "name": "Kristall Archive",
-  "description": "Официальная база знаний, гайды, правила и техническая документация сообщества KristallCommunity.",
+  "short_name": "V-Archive",
+  "name": "Vastaric Archive",
+  "description": "Официальная база знаний, гайды, правила и техническая документация сообщества Vastaric.",
   "icons": [
     {
-      "src": "https://github.com/KristallC/Kristall-Community/blob/main/favicon.png?raw=true",
+      "src": "https://github.com/KristallC/Community/blob/main/favicon.png?raw=true",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://github.com/KristallC/Kristall-Community/blob/main/favicon.png?raw=true",
+      "src": "https://github.com/KristallC/Community/blob/main/favicon.png?raw=true",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
