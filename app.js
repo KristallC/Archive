@@ -4,7 +4,7 @@ let usersDatabase = [];
 const categoryNames = {
     info: "📌 База знаний и FAQ",
     dev: "💻 Технический раздел",
-    guides: "🎮 Гайды и туториалы",
+    guides: "🔍 Гайды и туториалы",
     changelogs: "📜 Обновления проекта"
 };
 
