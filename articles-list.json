@@ -38,5 +38,15 @@
     "file": "articles/golang.html",
     "date": "28.09.2026",
     "authorId": "dev_kristall"
+  },
+  {
+    "id": "gamedesign-balance",
+    "title": "Математика баланса: Как спроектировать экономику в игре",
+    "description": "Разбираем базовые формулы игровой прогрессии, боремся с инфляцией ресурсов и учимся использовать экономические поглотители (Sinks) в геймдеве.",
+    "category": "guides",
+    "tags": ["геймдизайн", "баланс", "игры", "разработка", "экономика", "математика", "gamedev", "balance", "games", "gamedesign"],
+    "file": "articles/gamedesign-balance.html",
+    "date": "17.10.2026",
+    "authorId": "dev_kristall"
   }
 ]
