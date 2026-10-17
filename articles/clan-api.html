@@ -1,6 +1,6 @@
 <div class="wiki-article">
     <h1>📊 Вывод таблиц кланов в ваших проектах через API</h1>
-    <p class="lead-text">Вы разрабатываете собственные игры или приложения для нашего сообщества? Отличная новость! Теперь вы можете выводить актуальный рейтинг и списки кланов KristallCommunity прямо внутри своих проектов, используя наше статическое JSON-API.</p>
+    <p class="lead-text">Вы разрабатываете собственные игры или приложения для нашего сообщества? Отличная новость! Теперь вы можете выводить актуальный рейтинг и списки кланов Vastaric прямо внутри своих проектов, используя наше статическое JSON-API.</p>
 
     <!-- Блок внимания -->
     <div class="alert-block info">
@@ -14,7 +14,7 @@
     <h2>1. Ссылка на источник данных</h2>
     <p>Для получения актуальных данных используйте следующую прямую <code>raw</code> ссылку на наш репозиторий:</p>
     
-    <pre><code>https://raw.githubusercontent.com/KristallC/Kristall-Community/refs/heads/main/databases/clans.json</code></pre>
+    <pre><code>https://raw.githubusercontent.com/KristallC/Community/refs/heads/main/databases/clans.json</code></pre>
 
     <h2>2. Структура получаемого JSON-файла</h2>
     <p>При запросе сервер вернет вам массив объектов. Каждая карточка клана содержит следующие поля, которые легко прочитать из кода:</p>
@@ -32,7 +32,7 @@
     <h2>3. Пример реализации на JavaScript</h2>
     <p>Вы можете использовать стандартный метод <code>fetch()</code> для вывода данных в консоль вашего веб-приложения или скрипта:</p>
 
-    <pre><code>const url = 'https://raw.githubusercontent.com/KristallC/Kristall-Community/refs/heads/main/databases/clans.json';
+    <pre><code>const url = 'https://raw.githubusercontent.com/KristallC/Community/refs/heads/main/databases/clans.json';
 
 fetch(url)
   .then(response => response.json())
@@ -40,7 +40,7 @@ fetch(url)
     // Сортируем кланы по очкам (от большего к меньшему)
     clans.sort((a, b) => b.score - a.score);
     
-    console.log("Топ кланов Kristall:");
+    console.log("Топ кланов Vastaric:");
     clans.forEach((clan, index) => {
         console.log(`${index + 1}. [${clan.name}] — Очки: ${clan.score}`);
     });
@@ -56,5 +56,5 @@ fetch(url)
         </div>
     </div>
 
-    <p>Если у вас возникли трудности с парсингом данных, свяжитесь с нами через нашу <a href="https://kristallc.github.io/Kristall-Community/" target="_blank" class="wiki-link">главную платформу</a>.</p>
+    <p>Если у вас возникли трудности с парсингом данных, свяжитесь с нами через нашу <a href="https://kristallc.github.io/Community/" target="_blank" class="wiki-link">главную платформу</a>.</p>
 </div>
