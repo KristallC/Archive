@@ -472,3 +472,93 @@ body.light-theme .image-shimmer-wrapper.loading::after {
 .wiki-article img.shimmer-img.loaded {
     opacity: 1;
 }
+
+/* ==========================================================================
+   11. БЛОКИ СКАЧИВАНИЯ ФАЙЛОВ (DOWNLOAD CARDS) В СТАТЬЯХ
+   ========================================================================== */
+.download-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 24px 0;
+    box-shadow: 0 4px 20px rgba(121, 82, 235, 0.1);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.download-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-hover);
+    box-shadow: 0 6px 25px rgba(121, 82, 235, 0.15);
+}
+
+.download-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0; /* Защита от вылезания длинного текста */
+}
+
+.download-icon {
+    font-size: 32px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.download-text {
+    min-width: 0;
+}
+
+.download-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.download-meta {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Сама кнопка скачивания */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff !important; /* Насильно оставляем текст белым */
+    text-decoration: none !important; /* Убираем подчеркивание */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.download-btn:hover {
+    background: var(--accent-hover);
+}
+
+/* Адаптивность для мобилок: превращаем в вертикальный стек, если экран узкий */
+@media (max-width: 600px) {
+    .download-card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 18px;
+        gap: 16px;
+    }
+    .download-btn {
+        justify-content: center;
+        width: 100%;
+    }
+}
