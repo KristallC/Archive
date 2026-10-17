@@ -33,7 +33,7 @@
 import "fmt" // Импортируем стандартный пакет для ввода-вывода текста
 
 func main() {
-    fmt.Println("Привет от Kristall Archive!")
+    fmt.Println("Привет от Vastaric!")
 }</code></pre>
 
     <h2>3. Переменные, Константы и Типизация</h2>
@@ -177,8 +177,8 @@ func main() {
     fmt.Println("Результат деления:", result)
 }</code></pre>
 
-    <h2>6. Структуры данных (Массивы, Слайсы, Мапы)</h2>
-    <p>В реальной бэкенд-разработке массивы фиксированной длины используются редко. Вместо них применяются динамические массивы — <strong>Слайсы (Slices)</strong>, и ассоциативные массивы — <strong>Мапы (Maps)</strong>.</p>
+    <h2>6. Структуры данных (Массивы, Слайсы, Карты)</h2>
+    <p>В реальной бэкенд-разработке массивы фиксированной длины используются редко. Вместо них применяются динамические массивы — <strong>Слайсы (Slices)</strong>, и ассоциативные массивы — <strong>Карты (Maps)</strong>.</p>
 
     <pre><code>package main
 
@@ -187,13 +187,13 @@ import "fmt"
 func main() {
     // --- СЛАЙСЫ (Динамические массивы) ---
     clans := []string{"Alpha", "Beta"}
-    clans = append(clans, "Kristall") // Добавляем элемент динамически
+    clans = append(clans, "Vastaric") // Добавляем элемент динамически
     
     for index, clanName := range clans {
         fmt.Printf("Клан %d: %s\n", index+1, clanName)
     }
 
-    // --- МАПЫ (Словари / Хэш-таблицы) ---
+    // --- КАРТЫ (Словари / Хэш-таблицы) ---
     playerScores := make(map[string]int)
     playerScores["Vlad"] = 5000
     playerScores["Denis"] = 3400
