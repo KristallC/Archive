@@ -14,7 +14,7 @@ async function initArchive() {
         articlesIndex = await response.json();
 
         try {
-            const usersResponse = await fetch('https://raw.githubusercontent.com/KristallC/Kristall-Community/refs/heads/main/databases/users.json');
+            const usersResponse = await fetch('https://raw.githubusercontent.com/KristallC/Community/refs/heads/main/databases/users.json');
             usersDatabase = await usersResponse.json();
         } catch(e) {
             console.warn('Не удалось загрузить базу пользователей с главного сайта:', e);
@@ -95,12 +95,12 @@ async function route() {
         void homeScreen.offsetWidth; 
         homeScreen.classList.add('fade-in');
         
-        document.title = "Kristall Archive";
+        document.title = "Vastaric Archive";
 
-        if(metaDesc) metaDesc.content = "Официальная база знаний KristallArchive. Инструкции, правила, техническая документация и гайды сообщества KristallCommunity.";
-        if(metaKeywords) metaKeywords.content = "Kristall Archive, KristallCommunity, гайды Kristall, правила сообщества, Kristall API, документация";
-        if(ogTitle) ogTitle.content = "Kristall Archive — База знаний сообщества";
-        if(ogDesc) ogDesc.content = "Ищите инструкции, статьи и гайды по вселенной Kristall. Всё в одном месте с красивым дизайном!";
+        if(metaDesc) metaDesc.content = "Официальная база знаний Vastaric. Инструкции, правила, техническая документация и гайды сообщества Vastaric Community.";
+        if(metaKeywords) metaKeywords.content = "Vastaric Archive, Vastaric Community, гайды Vastaric, правила сообщества, Vastaric API, документация";
+        if(ogTitle) ogTitle.content = "Vastaric Archive — База знаний сообщества";
+        if(ogDesc) ogDesc.content = "Ищите инструкции, статьи и гайды по вселенной Vastaric. Всё в одном месте с удобным интерфейсом!";
     } else {
         const article = articlesIndex.find(a => a.id === hash);
         
@@ -129,14 +129,14 @@ async function route() {
                 setupArticleMeta(articleHolder, article);
                 setupImageShimmer(articleHolder);
                 
-                document.title = `${article.title} | Kristall Archive`;
+                document.title = `${article.title} | Vastaric Archive`;
 
                 if (metaDesc) metaDesc.content = article.description;
                 if (ogTitle) ogTitle.content = article.title;
                 if (ogDesc) ogDesc.content = article.description;
                 
                 if (metaKeywords && article.tags) {
-                    metaKeywords.content = `Kristall Archive, ${article.tags.join(', ')}`;
+                    metaKeywords.content = `Vastaric Archive, ${article.tags.join(', ')}`;
                 }
 
             } catch (err) {
@@ -185,24 +185,30 @@ function initTheme() {
     const themeToggleBtn = document.getElementById('theme-toggle');
     if (!themeToggleBtn) return;
 
-    const savedTheme = localStorage.getItem('kristall-theme');
+    // 1. Читаем сохраненную тему из памяти по ключу 'theme'
+    const savedTheme = localStorage.getItem('theme');
 
+    // 2. Проверяем, что было сохранено
     if (savedTheme === 'light') {
         document.body.classList.add('light-theme');
-        themeToggleBtn.textContent = '☀️';
+        themeToggleBtn.textContent = '☀️'; // Включаем солнце, если тема светлая
     } else {
-        themeToggleBtn.textContent = '🌙';
+        document.body.classList.remove('light-theme');
+        themeToggleBtn.textContent = '🌙'; // Иначе по умолчанию луна
     }
 
+    // 3. Слушаем клик по кнопке
     themeToggleBtn.addEventListener('click', () => {
+        // Переключаем класс на body
         document.body.classList.toggle('light-theme');
 
+        // Проверяем результат: если класс есть — значит включили светлую тему
         if (document.body.classList.contains('light-theme')) {
             themeToggleBtn.textContent = '☀️';
-            localStorage.setItem('kristall-theme', 'light');
+            localStorage.setItem('theme', 'light'); // Запоминаем выбор
         } else {
             themeToggleBtn.textContent = '🌙';
-            localStorage.setItem('kristall-theme', 'dark');
+            localStorage.setItem('theme', 'dark');  // Запоминаем выбор
         }
     });
 }
@@ -376,7 +382,6 @@ function setupArticleMeta(container, article) {
     if (container.querySelector('.article-meta')) return; // Защита от дублирования
 
     // Ищем автора в базе по ID
-    // Предполагаем, что в твоем users.json у каждого юзера есть поля "id" и "username"
     const authorObject = usersDatabase.find(u => u.id === article.authorId);
     const authorName = authorObject ? authorObject.username : "Неизвестный автор";
 
