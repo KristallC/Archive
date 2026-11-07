@@ -354,7 +354,7 @@ function setupShareButton(container) {
 
     const shareBtn = document.createElement('button');
     shareBtn.className = 'share-article-btn';
-    shareBtn.innerHTML = '🔗 Поделиться статьёй';
+    shareBtn.innerHTML = '🔗 Поделиться';
 
     mainTitle.parentNode.insertBefore(shareBtn, mainTitle.nextSibling);
 
@@ -366,7 +366,7 @@ function setupShareButton(container) {
             shareBtn.classList.add('copied');
 
             setTimeout(() => {
-                shareBtn.innerHTML = '🔗 Поделиться статьёй';
+                shareBtn.innerHTML = '🔗 Поделиться';
                 shareBtn.classList.remove('copied');
             }, 2000);
         } catch (err) {
